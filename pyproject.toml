@@ -1,0 +1,37 @@
+[project]
+name = "LuauBD"
+version = "0.1.0"
+description = "A Luau runtime for the Ballsdex Discord bot."
+requires-python = ">=3.14"
+
+dependencies = [
+    "pluau>=0.1.2",
+]
+
+[dependency-groups]
+dev = [
+    "django>=6.0.6",
+    "ruff>=0.15.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/luaubd"]
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py313"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E203"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ballsdex", "bd_models", "settings"]
+split-on-trailing-comma = false
