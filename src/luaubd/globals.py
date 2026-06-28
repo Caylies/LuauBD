@@ -4,7 +4,7 @@ import pluau
 
 from bd_models.models import Player
 
-from .core.luau.luau_classes import LuauClass, LuauModel, luaumethod
+from .core import LuauClass, LuauModel, luaumethod
 
 __all__ = ("BigInt", "Context", "PlayerModel", "ctx_print")
 
